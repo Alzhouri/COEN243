@@ -1,0 +1,113 @@
+
+//  OOP circle *******************************************************************************/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+class Circle{
+    public:    
+    // data members
+        float radius;       
+    
+    // default constructor
+        Circle()
+        {
+            radius=1;
+        }
+        
+    // member functions   
+        float getArea()
+        {
+            return pow(radius,2) * 3.14159;
+        }
+        
+        void setRadius(float newRadius)
+        {
+            radius= newRadius;    
+        }
+};  // end class Circle
+
+
+int main()
+{
+    Circle c1; // Declare variable t to be object of class Circle.
+    Circle c2;
+
+    cout << "The radius of c1 is "<<c1.radius<<endl;
+    cout << "The radius of c2 is "<<c2.radius<<endl;
+    // access radius variable of object c1.
+    c1.setRadius(5);
+    c2.setRadius(8);
+    cout << "c1 radius = "<<c1.radius<<", and area = "<<c1.getArea()<<endl;
+    cout << "c2 radius = "<<c2.radius<<", and area = "<<c2.getArea()<<endl;
+    
+    return 0;
+}
+
+
+// OOP class time *****************************************************************************/
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class Time{
+    private:    
+    // data members
+        int hour;       // 0 - 23
+        int minute;     // 0 - 59
+        int second;     // 0 - 59
+    
+    public:    
+    // constructors
+        Time()
+        {
+            hour=0;
+            minute=0;
+            second=0;
+        }
+    
+    // member functions
+        void setTime(int h, int m, int s)
+        {
+            hour=(h>=0 && h<24)? h:0;
+            minute=(m>=0 && m<60)? m:0;
+            second=(s>=0 && s<60)? s:0;
+        
+        }
+        void printUniversal()  // print univeral time format
+        {
+            cout    << setfill('0')
+                    << setw(2) << hour << ":"
+                    << setw(2) << minute << ":"
+                    << setw(2) << second;    
+        }
+        
+        void printStandard()   // print standard time format
+        {
+            cout << ((hour == 0 || hour == 12) ? 12 : hour % 12)
+                    << ":" << setfill('0') << setw(2) << minute
+                    << ":" << setw(2) << second
+                    << (hour < 12 ? " AM" : " PM");
+        }
+};  // end class time
+
+
+int main()
+{
+    Time t; // Declare variable t to be object of class Time.
+
+    cout << "The initial universal time is ";
+    t.printUniversal();
+    
+    cout << "\nThe initial standard time is ";
+    t.printStandard();
+    
+    t.setTime(13, 27, 6); // change time
+    
+    cout << "\n\nUniversal time after setTime is ";
+    t.printUniversal(); // 13:27:06
+    cout << "\nStandard time after setTime is ";
+    t.printStandard(); // 1:27:06 PM
+    return 0;
+}
