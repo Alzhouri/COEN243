@@ -1,0 +1,202 @@
+
+// null pointer ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int *ptr;
+    cout<<"The variable ptr points to "<<ptr;
+    return 0;
+}
+
+
+// return the address of a given variable using address-of operator ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1=5;
+    cout<<"The address of num1 is "<<&num1;
+    return 0;
+}
+
+
+// assign address of variable to the pointer ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1=5;
+    int *p=&num1;
+    cout<<"num1 is "<<num1<<endl
+        <<"The address of num1 is "<<&num1<<endl
+        <<"The pointer p holds, "<<p<<", the address of num1."<<endl
+        <<"Note that p points to "<<*p;
+    return 0;
+}
+
+
+
+// reference vs pointer *******************************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x=2;
+    int y=x;
+    int& k=x; // k refers to int variable which is x
+    int* i=&x;
+    
+    cout<< " x =" << x << ", at location "<< &x <<endl;
+    cout<< " y =" << y << ", at location "<< &y <<endl;
+    cout<< " k =" << k << " &k refers to "<< &k <<endl;
+    cout<< " i =" << i << "  at location "<< &i <<", i points to "<< *i;
+}
+
+
+
+// example 2 ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=2;
+    int* i=&x;
+    
+    cout<< "  x =" << x <<endl
+        << " *i =" << *i <<endl;
+    ++x;
+    ++*i;
+    cout<< "  x =" << x <<endl
+        << " *i =" << *i <<endl;
+}
+
+
+// pass by reference ***************************************************************************
+
+#include <iostream>
+using namespace std;
+
+void exch(int& p1, int& p2)
+{
+    int temp=p1;
+    p1=p2;
+    p2=temp;
+}
+
+int main()
+{
+    int x=2;
+    int y=3;
+    
+    cout<< "Before:  x =" << x << ",  y =" << y <<endl;
+    exch(x, y);
+    cout<< "After :  x =" << x << ",  y =" << y <<endl;
+    return 0;
+}
+
+
+// pass by pointer *******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void exch(int* p1, int* p2)
+{
+    int temp=*p1;
+    *p1=*p2;
+    *p2=temp;
+}
+
+int main()
+{
+    int x=2;
+    int y=3;
+    
+    cout<< "Before:  x =" << x << ",  y =" << y <<endl;
+    exch(&x, &y);
+    cout<< "After :  x =" << x << ",  y =" << y <<endl;
+    return 0;
+}
+
+
+
+// pass reference with reference argument *******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void exch(int*& p1, int*& p2)
+{
+    int* temp=p1;
+    p1=p2;
+    p2=temp;
+}
+
+int main()
+{
+    int x=2;
+    int y=3;
+    int* n=&x;
+    int* m=&y;
+    
+    cout<< "Before:  x =" << x << ",  y =" << y <<endl;
+    cout<< "Before:  *n =" << *n << ",  *m =" << *m <<endl;
+    exch(n, m);
+    cout<< "After :  x =" << x << ",  y =" << y <<endl;
+    cout<< "After:  *n =" << *n << ",  *m =" << *m <<endl;
+    return 0;
+}
+
+
+
+// pointers and arrays *******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int array[5]={10,15,20,25,30};
+    
+    cout<< array[0] << endl
+        << array << endl
+        << array+2 << endl
+        << *array << endl
+        << *array+2 << endl
+        << *(array+2);
+    return 0;
+}
+
+
+// sizeof pointers ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1(5);
+    int *p1=&num1;
+    cout<< "The size of *p1 is "<< sizeof(*p1)<< endl;
+    cout<< "The size of p1 is "<< sizeof(p1)<< endl;
+    
+    double num2(5);
+    double *p2=&num2;
+    cout<< "The size of *p2 is "<< sizeof(*p2)<< endl;
+    cout<< "The size of p2 is "<< sizeof(p2)<< endl;
+    return 0;
+}
+
+
