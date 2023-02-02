@@ -1,0 +1,260 @@
+// Math function *****************************************************************************/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+ int main() {
+   float radius, areaCircle;
+
+ // prompt the user to enter the radius as input
+   cout << "Enter the radius of the circle: ";
+   cin >> radius;
+
+   areaCircle = 3.14 * pow(radius,2);
+   cout << "Circle area = " << areaCircle << endl;
+
+   return 0;
+}
+
+
+// introduction to functions ****************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+
+ int main() {
+   int countDiv3=0;
+
+   for (int i= 10; i<=20; i++)
+    if(i%3 ==0)
+        countDiv3 += 1;
+   cout << countDiv3<<" numbers are divisible by 3.\n";
+
+    countDiv3=0;
+   for (int i= 35; i<=50; i++)
+    if(i%3 ==0)
+        countDiv3 += 1;
+   cout << countDiv3<<" numbers are divisible by 3.\n";
+   
+    countDiv3=0;
+    for (int i= 60; i<=80; i++)
+     if(i%3 ==0)
+        countDiv3 += 1;
+   cout << countDiv3<<" numbers are divisible by 3.";
+
+   return 0;
+}
+
+
+// function 1 ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+ int divisibleBy3( int x, int y)
+ {
+     int countDiv3=0;
+     for (int i= x; i<=y; i++)
+        if(i%3 ==0)
+        countDiv3 += 1;
+    return countDiv3;
+ }
+
+ int main() {
+   cout << divisibleBy3(10, 20)<<" numbers are divisible by 3.\n";
+   cout << divisibleBy3(35, 50)<<" numbers are divisible by 3.\n";
+   cout << divisibleBy3(60, 80)<<" numbers are divisible by 3.\n";
+
+   return 0;
+}
+
+
+// void function ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+ void prime( int x )
+ {
+     bool isprime=1;
+     for (int i= 2; i<x; i++)
+        if(x%i ==0)
+            isprime=0;
+     if(isprime)
+        cout<<x<<" is prime.";
+        else
+        cout<<x<<" is not prime.";
+ }
+
+ int main() {
+   cout <<" Enter a number > 2: ";
+   int y;
+   cin>>y;
+   prime(y);
+   return 0;
+}
+
+
+// function prototype ******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+ int square( int ); // function prototype 
+
+ int main() {
+   int x;
+   cout <<" Enter a number: ";
+   cin>>x;
+   cout<<x<<"^2 = "<<square(x); // function call
+   return 0;
+}
+
+ int square(int y)  // function definition
+ {
+     return y*y;
+ }
+
+
+
+// Min function (algorithm 1)*****************************************************************************/
+
+#include <iostream>
+using namespace std;
+ 
+// Function prototype
+ int min(int , int );
+ int min(int , int , int );
+ double min(double , double );
+
+ int main()
+ {
+ // Invoke the min function with int parameters
+ cout << "The minimum between 3 and 4 is " <<min(3, 4) << endl;
+
+ // Invoke the min function with three int parameters
+ cout << "The minimum between 3, 2, and 4 is "<< min(3, 2, 4) << endl;
+ // Invoke the min function with two double parameters
+ cout << "The minimum between 5.8, and 5.4 is "<< min(5.8, 5.4) << endl;
+ return 0;
+ }
+ 
+ // Return the min between two int values 
+ int min(int num1, int num2)
+ {
+ if (num1 < num2)
+    return num1;
+ else
+    return num2;
+ }
+ // Find the min between three int values 
+ int min(int num1, int num2, int num3)
+ {
+     int min_num=num2;
+   if (num1 < num2)
+        min_num=num1;
+   if (num3< min_num)
+        min_num=num3;
+        
+   return min_num;
+ }
+  // Return the min among two double values 
+  double min(double num1, double num2)
+ {
+    if (num1 < num2)
+        return num1;
+    else
+        return num2;
+ }
+
+
+
+// Min function (algorithm 2)*****************************************************************************/*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+ 
+// Function prototype
+ int min(int , int );
+ int min(int , int , int );
+ double min(double , double );
+
+ int main()
+ {
+ // Invoke the min function with int parameters
+ cout << "The minimum between 3 and 4 is " <<min(3, 4) << endl;
+
+ // Invoke the min function with three int parameters
+ cout << "The minimum between 3, 2, and 4 is "<< min(3, 2, 4) << endl;
+ // Invoke the min function with two double parameters
+ cout << "The minimum between 5.8, and 5.4 is "<< min(5.8, 5.4) << endl;
+ return 0;
+ }
+ 
+ // Return the min between two int values 
+ int min(int num1, int num2)
+ {
+ if (num1 < num2)
+    return num1;
+ else
+    return num2;
+ }
+ // Find the min between three int values 
+ int min(int num1, int num2, int num3)
+ {
+   return min(min(num1, num2), num3);
+ }
+  // Return the min among two double values 
+  double min(double num1, double num2)
+ {
+    if (num1 < num2)
+        return num1;
+    else
+        return num2;
+ }
+
+
+// pass by value *****************************************************************************/
+
+
+#include <iostream>
+using namespace std;
+
+  void half(int y)  // function definition
+ {
+     y = y/2;
+     cout<<"Inside function half, y = "<<y<<endl;
+ }
+
+ int main() {
+   int x = 10;
+   cout<<"x = "<< x <<", before the call."<<endl;
+   half(x);
+   cout<<"x = "<< x <<", after the call."<<endl;
+   return 0;
+}
+
+
+// reference variable *****************************************************************************/
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int i = 1;
+    int& j = i;
+    cout << "i = " << i << endl;
+    cout << "j = " << j << endl;
+    j++;
+    cout << "i = " << i << endl;
+    cout << "j = " << j << endl;
+    i++;
+    cout << "i = " << i << endl;
+    cout << "j = " << j << endl;
+    return 0;
+}
+
