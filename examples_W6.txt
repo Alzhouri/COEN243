@@ -1,0 +1,206 @@
+// empty parameter list *****************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int fun1();
+
+int main()
+{
+    
+    cout<<"Notice "<<fun1();
+    return 0;
+}
+
+int fun1()
+{
+    int i=3;
+    cout<<"i in fun1 is "<<i<<endl;
+    ++i;
+    cout<<" While after exiting fun1, i is ";
+    return i;
+}
+
+
+
+// example 1: local and global variables 1***************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void fun1();
+
+int i;
+
+int main()
+{
+    fun1();
+    return 0;
+}
+
+void fun1()
+{
+    int j = 4;
+    cout<<"j = "<< j<<", it is a local variable in fun1\n";
+    cout<<"i = "<< i<<", it is a global variable \n";
+    ++i;
+    ++j;
+    cout<<"j = "<< j<<", on exiting fun1\n";
+    cout<<"i = "<< i<<", on exiting fun1 \n";
+}
+
+
+// example 2: local acnd global variables *******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void fun1();
+void fun2(void);
+
+int i;
+
+int main()
+{
+    fun1();
+    fun2();
+    return 0;
+}
+
+void fun1()
+{
+    int j = 4;
+    cout<<"j = "<< j<<", it is a local variable in fun1\n";
+    cout<<"i = "<< i<<", it is a global variable \n";
+    ++i;
+    ++j;
+    cout<<"j = "<< j<<", on exiting fun1\n";
+    cout<<"i = "<< i<<", on exiting fun1 \n";
+}
+
+void fun2()
+{
+    int j = 2;
+    cout<<"j = "<< j<<", it is a local variable in fun2\n";
+    cout<<"i = "<< i<<", it is a global variable \n";
+    ++i;
+    ++j;
+    cout<<"j = "<< j<<", on exiting fun2\n";
+    cout<<"i = "<< i<<", on exiting fun2 \n";
+}
+
+
+
+
+
+// Example3: global and local variables use identical name *****************************************************************************/
+
+
+#include <iostream>
+using namespace std;
+
+void fun1();
+
+int i;
+
+int main()
+{
+    cout<<"i = "<< i<<", it is a global variable \n";
+    fun1();
+    cout<<"i = "<< i<<", after exiting fun1 \n";
+    return 0;
+}
+
+void fun1()
+{
+    int i = 4;
+    cout<<"i = "<< i<<", it is a local variable \n";
+    ++i;
+}
+
+
+
+// example 5: recursion *****************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+unsigned long factorial( unsigned long);
+
+
+int main()
+{
+    unsigned long n{0};
+    cout<<"Enter non-negative integer :";
+    cin>>n;
+    cout<<"Factorial( "<<n<<"  ) = "<<factorial(n);
+    return 0;
+}
+
+unsigned long factorial( unsigned long n)
+{
+    if (n==0)
+        return 1; // base case.
+    else
+        return n*factorial(n-1); // recursive call.
+}
+
+
+
+// string example ******************************************************************************/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    string x="COEN 243";
+    cout<<x<<endl;
+    cout<<"The ith character in x is "<<x[3]<<endl;
+    cout<<"The length of the string x is "<<x.length();
+    
+    return 0;
+}
+
+
+// compare *******************************************************************************/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string input;
+    cout << "Please enter your course code: ";
+    cin >> input;
+    if(input.compare("COEN_243")==0)
+        cout<<"It is a C++ programming course.";
+    else 
+        cout<<"It is not a C++ course";
+    return 0;
+}
+
+
+// Concatenating Strings ******************************************************************************/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main()
+{
+    string m1="COEN_";
+    string m2="243";
+    string m3=m1+m2;
+    
+    cout<<m1<<endl;
+    cout<<m2<<endl;
+    cout<<m3<<endl;
+    
+    return 0;
+}
+
