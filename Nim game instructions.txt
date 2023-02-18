@@ -13,6 +13,7 @@ Write the code in C++ to simulate a Nim game. The rules of Nim are as follows:
 
 **************************************************************************************************
 Note: 
+- This game is optional. If you are not interested there are no obligations.
 - We may change some rules at a later time.
 - To create this game you are allowed to use materials and concepts covered during COEN 243 lectures.
   It is not allowed to use something that we didn't cover during our study.
