@@ -1,0 +1,21 @@
+
+/*************************************************************************************************
+Write the code in C++ to simulate a Nim game. The rules of Nim are as follows:
+1- This game includes two players.
+2- Each player can pick up from one pile.
+3- The player can only take one or two tokens.
+4- The winner is the player who makes the last move.
+5- For now, suppose we only have 5 heaps.
+6- Prompt the user to enter the total number of tokens.
+7- Distribute tokens to 5 piles randomly so that there is no empty pile at the beginning.
+8- The game must be recursive, namely, it calls itself each turn.
+7- Try to use an array in C++ style (for example to represent the heaps).
+
+**************************************************************************************************
+Note: 
+- We may change some rules at a later time.
+- To create this game you are allowed to use materials and concepts covered during COEN 243 lectures.
+  It is not allowed to use something that we didn't cover during our study.
+- The main objective of this game is to apply the knowledge gained from our lectures.
+- In the second phase, we will hold a tournament to determine the winners of this league.
+***************************************************************************************************/
