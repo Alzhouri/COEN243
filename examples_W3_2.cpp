@@ -1,3 +1,21 @@
+// even / odd **************************************************************/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number=0;
+    cout <<"Enter a number ";
+    cin >> number;
+    if(number % 2 == 0)
+    cout << number <<" is even";
+    else
+    cout << number << " is odd";
+    return 0;
+}
+
 
 // while loop *****************************************
 #include <iostream>
@@ -19,8 +37,56 @@ int main()
 }
  
  
- // sentinal controlled iteration ***********************************************************************/
+ 
 
+/* *******************************************************************************/
+// Iteration: Counter-Controlled Iterations
+// while statement
+// Dr. Fadi Alzhouri
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int itemCounter=0;
+    int total=0;
+    int itemCost=0;
+    cout << "Please enter the number of items you would like to purchase: ";
+    cin >> itemCounter;
+    while(itemCounter>0){
+    cout<<"Enter the cost of the item: ";
+    cin >> itemCost;
+    total = total + itemCost;
+    itemCounter--;
+    }
+    cout<<"The total cost: "<< total<< " CAD";
+    return 0;
+}
+
+
+
+/* ******************************************************************************/
+// Iteration: Sentinel-Controlled Iteration
+// while statement
+// Dr. Fadi Alzhouri
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int total=0;
+    int itemCost=0;
+    
+    while(itemCost != -1){
+    total = total + itemCost;
+    cout<<"Enter the cost of the item or -1 to pay: ";
+    cin >> itemCost;
+    }
+    cout<<"The total cost: "<< total<< " CAD";
+    return 0;
+}
+
+// sentinal controlled iteration ***********************************************************************/
 #include <iostream>
 
 using namespace std;
@@ -53,6 +119,25 @@ int main()
 }
  
  
+/* ******************************************************************************/
+// Iteration: 
+// do/while statement
+// Dr. Fadi Alzhouri
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int iteration=1;
+    
+    do{
+    cout<<"Line: "<< iteration <<endl;
+    iteration++;
+    }while(iteration <5);
+
+    return 0;
+}
+
 
 // for loop**************************************************************************/
 
@@ -95,7 +180,19 @@ int main()
         return 0;
 }
 
+// ******************************************************************************
 
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    cout<<setw(9)<<"pop"<<left<<setw(9)<<"corn";
+
+    return 0;
+}
 
 // ******************************************************************************/
 
