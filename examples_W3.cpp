@@ -1,16 +1,46 @@
+
+// Algorithm *******************************************************************************/
+#include <iostream> 
+using namespace std;
+
+int main() {
+    int L=0;
+    int W=0;
+    int P=0;
+    
+    cout << "To calculate the perimeter of a rectangle: ";
+    cout << "\nEnter the length L: ";
+    cin >> L;
+    cout << "Enter the width W: ";
+    cin >> W;
+    P=2*(L+W);
+    cout << "The perimeter P = " << P;
+    
+   return 0;
+} 
+
+
 // if statement ********************************
 
-#include <iostream>
 
+// Conditional instructions: Control and decision statements
+// If statement
+// Dr. Fadi Alzhouri
+
+#include <iostream>
 using namespace std;
 
 int main()
 {
+    // Define a variable of type integer.
     int grade=0;
-    cout <<"Enter student\'s grade: ";
+    // Prompt the user to enter a grade.
+    cout<< "Enter your grade: ";
     cin >> grade;
-    if(grade >= 60)
-    cout << "Student passed the course"; 
+    
+    // Evaluate the grade, input, using an if statement.
+    if(grade >=60)
+        cout<< "Student passed the course"; 
 
     return 0;
 }
