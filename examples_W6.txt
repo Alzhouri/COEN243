@@ -1,4 +1,30 @@
-// empty parameter list *****************************************************************************/
+
+// empty parameter list 1*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+void printError(){
+    cout << "Invalid entry. ";
+}
+
+void displayAgain(void){
+    cout << "Try again.";
+}
+
+int main()
+{
+    int x=0;
+    cout << "Enter any number from 0 to 5:";
+    cin >> x;
+    if(x>5){
+        printError();
+        displayAgain();
+    }
+    return 0;
+}
+
+// empty parameter list 2*****************************************************************************/
 
 #include <iostream>
 using namespace std;
