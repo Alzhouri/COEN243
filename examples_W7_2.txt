@@ -67,7 +67,7 @@ int main() {
 using namespace std;
 
 const size_t arraySize{5};
-void printArray(std::array<int, arraySize> &m);
+void printArray(array<int, arraySize> &m);
 
 int main()
 {
@@ -83,7 +83,11 @@ void printArray(array<int, arraySize> &m){
 }
 
 
+
+
 // Modify array using functions *******************************************************************************/
+// pass by reference 
+// Dr. Fadi Alzhouri
 
 #include <iostream>
 #include <array>
@@ -115,6 +119,41 @@ void modifyArray(array<int, arraySize> &m){
 }
 
 
+// Pass multidimintional array to the function.*******************************************************************************/
+//Dr. Fadi Alzhouri
+#include <iostream>
+#include <array>
+using namespace std;
+const size_t rows{2};
+const size_t cols{3};
+
+void printArray(array<array<int, cols>, rows> &myarray)
+{
+    for(auto row: myarray){
+        for(auto element: row)
+        cout <<element <<' ';
+        cout <<endl;
+    }
+}
+
+void changeElement(int e){
+    e = e +2;
+    cout << "\n array1[1][2]= "<<e <<endl;
+}
+
+int main()
+{
+    array<array<int, cols>, rows>array1{1,2,3,4,5,6};
+    cout << " array1 elements are: "<<endl;
+    printArray(array1);
+    
+    changeElement(array1[1][2]);
+    
+    cout << " array1 becomes: "<<endl;
+    printArray(array1);
+
+    return 0;
+}
 
 
 // bubble sort *****************************************************************************/
